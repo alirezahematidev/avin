@@ -55,10 +55,8 @@ img{max-width:100%;height:auto;display:block;}
 }
 
 /* ---------- top nav ---------- */
-/* the glass itself comes from GlassSurface; .nav only positions it */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;}
-.nav-glass{border-bottom:1px solid var(--line);}
-.nav-inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,252,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;}
 .nav-mark{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;font-size:14px;}
 .nav-mark .sq{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800;}
 .nav-links{display:flex;gap:32px;font-size:13.5px;font-weight:600;color:var(--grey);}

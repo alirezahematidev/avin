@@ -17,22 +17,12 @@ npm run preview
 - `src/fonts/` — self-hosted Inter and JetBrains Mono, latin subset, variable (one file per style covers every weight)
 - `src/index.css` — all styling, plain CSS with custom properties
 - `src/useReveal.ts` — the scroll-reveal hook: tags elements, staggers siblings, observes them
-- `src/components/GlassSurface.tsx`, `GradientText.tsx` — vendored from
-  [React Bits](https://reactbits.dev) via the shadcn CLI (`components.json` registers the
-  `@react-bits` registry). They own their code, so local edits are expected — see below.
+- `src/components/GradientText.tsx` — vendored from [React Bits](https://reactbits.dev) via the
+  shadcn CLI (`components.json` registers the `@react-bits` registry)
 
-Tailwind v4 is installed only because those two components use its utility classes. The site's own
+Tailwind v4 is installed only because that component uses its utility classes. The site's own
 styling is still plain CSS in `index.css`, which is imported *after* `tailwind.css` so it wins
 wherever Tailwind's preflight disagrees.
-
-### GlassSurface
-
-`distortion={false}` in `Nav.tsx` is deliberate. The component's default path sets
-`backdrop-filter: url(#svg-filter)` for a liquid-glass refraction; Chrome parses that but paints
-the raw displacement map, which on a full-width square-cornered header reads as a dark olive band.
-The `distortion` prop is a local addition that skips straight to the plain frosted blur, and that
-fallback now honours the `blur` / `backgroundOpacity` / `saturation` props instead of hardcoding
-them. Re-running `shadcn add` for this component will overwrite both changes.
 
 ### Scroll reveals
 
