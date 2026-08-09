@@ -37,6 +37,9 @@ const SELECTOR = [
   'p',
 ].join(',')
 
+/** The closing block is the page's footer — it lands as-is, no animation. */
+const SKIP = '#contact'
+
 const STAGGER_MS = 70
 const MAX_DELAY_MS = 350
 
@@ -46,6 +49,7 @@ export function useReveal() {
     document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
       // skip anything already covered by a revealing ancestor, or it stays
       // hidden behind its parent's own fade
+      if (el.closest(SKIP)) return
       if (el.parentElement?.closest('.reveal')) return
       el.classList.add('reveal')
       targets.push(el)
