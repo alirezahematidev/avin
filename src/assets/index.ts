@@ -23,9 +23,9 @@ import ticketingFlowMap from "./ticketing-flow-map.webp";
 
 export const shots = {
   chefDeliveryZones: { src: chefDeliveryZones, width: 1440, height: 1030 },
-  chefOrderCustomer: { src: chefOrderCustomer, width: 5792, height: 3522 },
-  chefOrderDetails: { src: chefOrderDetails, width: 5792, height: 4144 },
-  chefPageBuilder: { src: chefPageBuilder, width: 5764, height: 8000 },
+  chefOrderCustomer: { src: chefOrderCustomer, width: 1440, height: 876 },
+  chefOrderDetails: { src: chefOrderDetails, width: 1440, height: 1030 },
+  chefPageBuilder: { src: chefPageBuilder, width: 1440, height: 1999 },
   customerAiSearch: { src: customerAiSearch, width: 2732, height: 2500 },
   customerCart: { src: customerCart, width: 5792, height: 4270 },
   customerCheckoutCoupon: { src: customerCheckoutCoupon, width: 5792, height: 2438 },

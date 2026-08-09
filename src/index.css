@@ -55,8 +55,10 @@ img{max-width:100%;height:auto;display:block;}
 }
 
 /* ---------- top nav ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,252,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
-.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;}
+/* the glass itself comes from GlassSurface; .nav only positions it */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;}
+.nav-glass{border-bottom:1px solid var(--line);}
+.nav-inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;}
 .nav-mark{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;font-size:14px;}
 .nav-mark .sq{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--grad-a),var(--grad-b));display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:800;}
 .nav-links{display:flex;gap:32px;font-size:13.5px;font-weight:600;color:var(--grey);}
@@ -74,7 +76,9 @@ img{max-width:100%;height:auto;display:block;}
 .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;color:var(--indigo);text-transform:uppercase;font-weight:700;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
 .eyebrow::before{content:'';width:26px;height:1.5px;background:var(--indigo);display:inline-block;}
 .hero h1{font-size:clamp(56px,7.2vw,108px);font-weight:900;letter-spacing:-.03em;line-height:.98;color:var(--ink);position:relative;z-index:1;}
-.hero h1 span{background:linear-gradient(100deg,var(--indigo-d) 10%,var(--indigo) 55%,var(--coral) 110%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+/* GradientText ships centred, rounded and font-medium — undo all of that so the
+   animated name sits exactly where the static one did */
+.hero h1 .hero-name{margin:0;max-width:none;justify-content:flex-start;font-weight:inherit;border-radius:0;overflow:visible;cursor:default;backdrop-filter:none;}
 .hero .role{font-size:22px;font-weight:600;color:var(--grey);margin-top:22px;}
 .hero .tagline{margin-top:36px;max-width:640px;font-size:19px;font-weight:600;color:var(--ink);border-left:3px solid var(--indigo);background:transparent;padding:4px 0 4px 22px;line-height:1.55;}
 .hero .tagline b{color:var(--indigo);font-weight:700;}

@@ -1,4 +1,9 @@
+import GradientText from './GradientText'
+
 const CHIPS = ['Fintech', 'Enterprise Platforms', 'Marketplace', 'Operational UX', 'B2B & B2C']
+
+// the page's own indigo → coral ramp, not the React Bits default purples
+const NAME_COLORS = ['#2B2D75', '#4C4FE3', '#FF6A45']
 
 export default function Hero() {
   return (
@@ -6,8 +11,9 @@ export default function Hero() {
       <div className="eyebrow">Senior Product Designer</div>
       <h1>
         Avin
-        <br />
-        <span>Abkhiz</span>
+        <GradientText className="hero-name" colors={NAME_COLORS} animationSpeed={9}>
+          Abkhiz
+        </GradientText>
       </h1>
       <p className="role">
         I design the systems companies actually run on — leasing platforms, marketplaces, back-office
