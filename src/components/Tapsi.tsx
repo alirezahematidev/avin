@@ -31,7 +31,7 @@ export default function Tapsi() {
               lineHeight: 1.75,
               maxWidth: 400,
               color: 'var(--body)',
-              flex: '0 1 400px',
+              flex: '1 1 340px',
               margin: 0,
               marginRight: 'auto',
             }}

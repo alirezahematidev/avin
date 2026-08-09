@@ -20,7 +20,7 @@ export default function EcosystemDiagram() {
     <svg
       viewBox="0 0 700 520"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ width: '100%', maxWidth: 560, flex: '0 0 500px', display: 'block', marginLeft: 0 }}
+      style={{ width: '100%', maxWidth: 560, flex: '1 1 320px', display: 'block' }}
       role="img"
       aria-label="TAPSI Food ecosystem: Chef internal operations, Customer App, and Merchant App around a shared marketplace"
     >

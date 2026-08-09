@@ -14,7 +14,23 @@ npm run preview
 - `src/App.tsx` — page order
 - `src/components/` — one file per section; `Shot.tsx` renders the screenshots
 - `src/assets/` — the 21 webp screenshots + `index.ts` (src + intrinsic size, so lazy images reserve their space)
+- `src/fonts/` — self-hosted Inter and JetBrains Mono, latin subset, variable (one file per style covers every weight)
 - `src/index.css` — all styling, plain CSS with custom properties
+- `src/useReveal.ts` — the scroll-reveal hook: tags elements, staggers siblings, observes them
+
+### Scroll reveals
+
+`useReveal` adds `.reveal` to everything matching its selector list, skipping anything already
+inside a revealing ancestor, and sets `--d` on siblings so they cascade. The motion itself is CSS:
+a shared fade-and-rise, with screenshots scaling up, pills popping, and list rows sliding in from
+the left. Every variant needs a matching `.in` rule at equal specificity or the element never
+settles. `prefers-reduced-motion` turns all of it off.
+
+### Responsive
+
+Breakpoints at 860px (grids collapse to one column, side-by-side screenshots stack) and 560px
+(tighter padding, smaller case icons, nav cue hidden). `html` uses `overflow-x: clip` because the
+hero glow is meant to bleed past the viewport.
 
 ## Deploy
 
