@@ -15,29 +15,35 @@ const EDUCATION = [
   { degree: 'B.Sc Industrial Engineering', school: 'Kharazmi University', years: '2011 — 2015' },
 ]
 
-export default function Closing() {
+/** `full` adds skills and education — the Home page's version. Case-study pages
+ *  close with just the CTA and footer. */
+export default function Closing({ full = false }: { full?: boolean }) {
   return (
     <section id="contact" className="closing">
       <div className="wrap">
-        <div className="section-eyebrow">Skills</div>
-        <div className="skills-cloud">
-          {SKILLS.map((s) => (
-            <span key={s}>{s}</span>
-          ))}
-        </div>
-
-        <div className="section-eyebrow" style={{ marginTop: 64 }}>
-          Education
-        </div>
-        <div className="edu-row">
-          {EDUCATION.map((e) => (
-            <div className="edu-item" key={e.degree}>
-              <b>{e.degree}</b>
-              <span>{e.school}</span>
-              <small>{e.years}</small>
+        {full && (
+          <>
+            <div className="section-eyebrow">Skills</div>
+            <div className="skills-cloud">
+              {SKILLS.map((s) => (
+                <span key={s}>{s}</span>
+              ))}
             </div>
-          ))}
-        </div>
+
+            <div className="section-eyebrow" style={{ marginTop: 64 }}>
+              Education
+            </div>
+            <div className="edu-row">
+              {EDUCATION.map((e) => (
+                <div className="edu-item" key={e.degree}>
+                  <b>{e.degree}</b>
+                  <span>{e.school}</span>
+                  <small>{e.years}</small>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
         <div className="cta">
           <h2>Let's talk.</h2>

@@ -1,35 +1,49 @@
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import About from './components/About'
-import ChapterDivider from './components/ChapterDivider'
-import Hummers from './components/Hummers'
-import Tapsi from './components/Tapsi'
-import Closing from './components/Closing'
 import { useEffect } from 'react'
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import Hummers from './pages/Hummers'
+import TapsiFood from './pages/TapsiFood'
+import OtherProjects from './pages/OtherProjects'
 import { useReveal } from './useReveal'
 
-export default function App() {
+// each page tints its gradient frames and dashed placeholders with its own accent
+const ACCENT: Record<string, string> = {
+  '/hummers': 'var(--hummers-rgb)',
+  '/tapsifood': 'var(--tapsi-rgb)',
+  '/other-projects': 'var(--other-rgb)',
+}
+
+function Layout() {
+  const { pathname } = useLocation()
   useReveal()
 
-  // the browser's anchor jump happens before React renders, so redo it on mount
   useEffect(() => {
-    if (location.hash) document.querySelector(location.hash)?.scrollIntoView()
-  }, [])
+    document.body.style.setProperty('--accent-rgb', ACCENT[pathname] ?? 'var(--indigo-rgb)')
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   return (
     <>
       <Nav />
-      <Hero />
-      <About />
-      <ChapterDivider
-        eyebrow="01 · Selected Work"
-        title="Hummers"
-        sub="Fintech B2B leasing platform — case study starts below."
-        color="var(--hummers)"
-      />
-      <Hummers />
-      <Tapsi />
-      <Closing />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hummers" element={<Hummers />} />
+        <Route path="/tapsifood" element={<TapsiFood />} />
+        <Route path="/other-projects" element={<OtherProjects />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </>
+  )
+}
+
+// HashRouter, not BrowserRouter: the build is deployed as plain static files
+// (Liara static / GitHub Pages), neither of which rewrites unknown paths to
+// index.html — a real /hummers URL would 404 on refresh.
+export default function App() {
+  return (
+    <HashRouter>
+      <Layout />
+    </HashRouter>
   )
 }

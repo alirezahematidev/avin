@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 /** Everything that fades in on scroll. Document order matters: a container listed
  *  here claims its contents, so anything inside it is left alone. */
@@ -44,6 +45,8 @@ const STAGGER_MS = 70
 const MAX_DELAY_MS = 350
 
 export function useReveal() {
+  const { pathname } = useLocation()
+
   useEffect(() => {
     const targets: HTMLElement[] = []
     document.querySelectorAll<HTMLElement>(SELECTOR).forEach((el) => {
@@ -85,5 +88,6 @@ export function useReveal() {
     targets.forEach((el) => io.observe(el))
 
     return () => io.disconnect()
-  }, [])
+    // each route renders its own content — re-scan on navigation
+  }, [pathname])
 }

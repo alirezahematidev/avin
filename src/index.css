@@ -20,6 +20,14 @@
   font-display: swap;
   src: url("./fonts/jetbrains-mono.woff2") format("woff2");
 }
+
+/* =========================================================================
+   Avin Abkhiz — Portfolio
+   Shared stylesheet for all pages (index, hummers, tapsifood, pichak,
+   hamrah-aval, other-projects). Theme, type, color and spacing are carried
+   over unchanged from the original single-page site.
+   ========================================================================= */
+
 :root {
   --paper: #fafafc;
   --panel: #ffffff;
@@ -36,11 +44,29 @@
   --indigo-d: #2b2d75;
   --coral: #ff6a45;
   --coral-d: #d8481f;
+
+  /* company / product accent colors */
   --hummers: #2452d9;
   --tapsi: #f1602a;
   --merchant: #2fa36b;
   --chef: #8a4fe8;
   --customer: #e0446e;
+  --pichak: #0e9f8e;
+  --hamrah: #7c4dff;
+  --other: #54576b;
+
+  /* rgb triplets of the accents above, used for translucent gradient fills */
+  --indigo-rgb: 76, 79, 227;
+  --coral-rgb: 255, 106, 69;
+  --hummers-rgb: 36, 82, 217;
+  --tapsi-rgb: 241, 96, 42;
+  --merchant-rgb: 47, 163, 107;
+  --chef-rgb: 138, 79, 232;
+  --customer-rgb: 224, 68, 110;
+  --pichak-rgb: 14, 159, 142;
+  --hamrah-rgb: 124, 77, 255;
+  --other-rgb: 84, 87, 107;
+
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --maxw: 1180px;
@@ -50,11 +76,8 @@
   margin: 0;
   padding: 0;
 }
-/* overflow-x:clip, not hidden — the hero glow bleeds past the viewport by design,
-   and clip doesn't turn html into a scroll container the way hidden does */
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
 }
 body {
   font-family: var(--sans);
@@ -63,6 +86,7 @@ body {
   line-height: 1.6;
   font-size: 17px;
   overflow-x: hidden;
+  --accent-rgb: var(--indigo-rgb); /* default gradient accent — overridden per page */
 }
 ::selection {
   background: var(--grad-a);
@@ -82,81 +106,23 @@ section {
 }
 img {
   max-width: 100%;
-  height: auto;
   display: block;
 }
 
-/* ---------- reveal-on-scroll ----------
-   --d is the stagger delay, set per element by useReveal(). */
+/* ---------- reveal-on-scroll ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition:
-    opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) var(--d, 0ms),
-    transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) var(--d, 0ms);
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 .reveal.in {
   opacity: 1;
   transform: none;
 }
-
-/* screenshots settle in from slightly further away and scale up */
-.shot.reveal {
-  transform: translateY(38px) scale(0.985);
-  transition-duration: 0.85s;
-}
-.shot.reveal.in {
-  transform: none;
-}
-/* headings travel a little more than body copy */
-.section-title.reveal,
-.sub-title.reveal,
-.cta.reveal,
-.chapter-divider h2.reveal {
-  transform: translateY(36px);
-}
-.section-title.reveal.in,
-.sub-title.reveal.in,
-.cta.reveal.in,
-.chapter-divider h2.reveal.in {
-  transform: none;
-}
-/* pills pop rather than slide */
-.chip.reveal,
-.step-pill.reveal,
-.case-meta span.reveal,
-.skills-cloud span.reveal,
-.fcard.reveal {
-  transform: translateY(14px) scale(0.96);
-  transition-duration: 0.55s;
-}
-.chip.reveal.in,
-.step-pill.reveal.in,
-.case-meta span.reveal.in,
-.skills-cloud span.reveal.in,
-.fcard.reveal.in {
-  transform: none;
-}
-/* list rows come in from the side, matching their → and ✕ markers */
-.alist li.reveal,
-.plist li.reveal,
-.reflection li.reveal,
-.spec-row.reveal,
-.mini-toc-row.reveal {
-  transform: translateX(-18px);
-  transition-duration: 0.6s;
-}
-.alist li.reveal.in,
-.plist li.reveal.in,
-.reflection li.reveal.in,
-.spec-row.reveal.in,
-.mini-toc-row.reveal.in {
-  transform: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal.in {
+  .reveal {
     opacity: 1;
     transform: none;
     transition: none;
@@ -185,22 +151,12 @@ img {
 .nav-mark {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  font-size: 14px;
+  text-decoration: none;
 }
-.nav-mark .sq {
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 800;
+.nav-mark .wordmark {
+  height: 27px;
+  width: auto;
+  display: block;
 }
 .nav-links {
   display: flex;
@@ -212,9 +168,15 @@ img {
 .nav-links a {
   text-decoration: none;
   transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 .nav-links a:hover {
   color: var(--indigo);
+}
+.nav-links a.active {
+  color: var(--ink);
+  border-bottom-color: var(--indigo);
 }
 .nav-cue {
   font-family: var(--mono);
@@ -222,6 +184,9 @@ img {
   color: var(--grey-l);
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+.nav-toggle {
+  display: none;
 }
 
 /* ---------- hero ---------- */
@@ -271,17 +236,11 @@ img {
   position: relative;
   z-index: 1;
 }
-/* GradientText ships centred, rounded and font-medium — undo all of that so the
-   animated name sits exactly where the static one did */
-.hero h1 .hero-name {
-  margin: 0;
-  max-width: none;
-  justify-content: flex-start;
-  font-weight: inherit;
-  border-radius: 0;
-  overflow: visible;
-  cursor: default;
-  backdrop-filter: none;
+.hero h1 span {
+  background: linear-gradient(100deg, var(--indigo-d) 10%, var(--indigo) 55%, var(--coral) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .hero .role {
   font-size: 22px;
@@ -344,6 +303,10 @@ section {
   padding: 120px 0;
   position: relative;
 }
+.section-head {
+  margin-bottom: 56px;
+  max-width: 760px;
+}
 .section-eyebrow {
   font-family: var(--mono);
   font-size: 12px;
@@ -369,6 +332,10 @@ section {
 }
 
 /* ---------- about ---------- */
+/* the hero already closes on 100px of padding — don't stack another full section gap on top */
+#about {
+  padding-top: 0px;
+}
 .about-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -381,14 +348,25 @@ section {
   line-height: 1.75;
   margin-bottom: 18px;
 }
+.domain-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.domain-cloud span {
+  font-size: 13px;
+  font-weight: 700;
+  border: 1.5px solid var(--line);
+  padding: 9px 16px;
+  border-radius: 20px;
+  background: #fff;
+}
 .mini-toc {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: var(--panel);
   padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 .mini-toc a {
   display: flex;
@@ -441,8 +419,7 @@ section {
   color: var(--grey-l);
   font-size: 16px;
 }
-.mini-toc-divider {
-  width: 100%;
+.mini-toc-row + .mini-toc-row {
   border-top: 1px solid var(--line);
 }
 
@@ -468,6 +445,25 @@ section {
   font-size: 24px;
   flex-shrink: 0;
   box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+/* logo files already render as a complete, self-contained rounded-square
+   icon — their own gradient border baked in, with fully transparent
+   corners outside it. Clipping that with a second border-radius on this
+   container almost never lines up to the pixel, which cuts a visible
+   notch out of the border. So for logos: no radius, no clipping — just
+   show the artwork's own edge as-is. */
+.case-icon.has-logo {
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+}
+.case-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .case-meta {
   display: flex;
@@ -486,11 +482,37 @@ section {
   letter-spacing: 0.02em;
 }
 
+/* ---------- diagram (ecosystem) ---------- */
+.diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin: 36px 0;
+}
+.diagram .node {
+  font-size: 13.5px;
+  font-weight: 700;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  color: var(--ink);
+}
+.diagram .arrow {
+  color: var(--grey-l);
+  font-size: 20px;
+  padding: 0 14px;
+}
+
 /* ---------- two-col content ---------- */
 .two-col {
   display: grid;
   grid-template-columns: 0.42fr 0.58fr;
   gap: 64px;
+}
+.two-col.rev {
+  grid-template-columns: 0.58fr 0.42fr;
 }
 .spec-list {
   border-top: 2px solid var(--ink);
@@ -568,11 +590,54 @@ section {
   font-size: 13px;
 }
 
+/* ---------- principle cards ---------- */
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+.principle {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 26px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.principle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -18px rgba(20, 20, 40, 0.18);
+}
+.principle .num {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  color: #fff;
+  font-weight: 800;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.principle p {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
 /* ---------- stepper ---------- */
 .stepper {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0;
   align-items: center;
   margin: 28px 0;
 }
@@ -630,6 +695,23 @@ section {
 .note b {
   color: var(--indigo-d);
 }
+.note.warn {
+  border-left-color: var(--coral);
+}
+.note.warn b {
+  color: var(--coral-d);
+}
+
+/* ---------- placeholder-content callout (used on Pichak / Hamrah Aval / Other Projects) ---------- */
+.note.todo {
+  border-left-color: var(--other);
+  background: #f1f1f5;
+  border: 1px dashed var(--ph-border);
+  border-left: 3px dashed var(--other);
+}
+.note.todo b {
+  color: var(--ink);
+}
 
 /* ---------- challenge / decision cards ---------- */
 .decision {
@@ -685,21 +767,314 @@ section {
   color: var(--grey);
 }
 
-/* ---------- mock screen visuals (original CSS artwork, not real screenshots) ---------- */
-.ph-visual {
-  background: var(--ph-bg);
+/* =========================================================================
+   IMAGE FRAMES
+   Every screenshot/frame lives inside a .shot — a soft gradient-tinted card
+   (tinted by the --accent-rgb custom property set on <body> or on a
+   .sub-product wrapper). Frames are ALWAYS stacked vertically via
+   .shot-stack — there is no side-by-side layout anymore, so the stack reads
+   the same way on desktop and mobile.
+   Until a real frame is dropped in at the referenced path, the <img>'s
+   onerror handler swaps in a clearly-labelled placeholder showing the
+   expected filename, so missing images never show a broken-image icon.
+   ========================================================================= */
+.shot-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 28px 0;
+}
+.shot-stack:first-child {
+  margin-top: 0;
+}
+
+/* paired boxes: two related feature-area boxes placed side by side instead
+   of stacked, so their filmstrip frames line up at the same width as a
+   wider reference filmstrip elsewhere on the page. Each .shot gets extra
+   padding to compensate for splitting the row width in two. Collapses to
+   a normal vertical stack below 860px. */
+.shot-stack--pair {
+  flex-direction: row;
+  gap: 24px;
+}
+.shot-stack--pair .shot {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 64px;
+}
+
+/* uneven pair: same side-by-side idea, but for two boxes holding a
+   different number of frames each (e.g. 3-up next to 2-up) — lighter
+   padding and an explicit flex ratio so the wider box gets proportionally
+   more room instead of splitting 50/50, keeping both boxes' frames close
+   to the same width. */
+.shot-stack--pair.pair--uneven {
+  gap: 16px;
+}
+.shot-stack--pair.pair--uneven .shot {
+  padding: 32px;
+}
+.shot-stack--pair.pair--uneven .shot.shot--wide {
+  flex: 3 1 0;
+}
+.shot-stack--pair.pair--uneven .shot.shot--narrow {
+  flex: 2 1 0;
+}
+
+.shot {
+  position: relative;
+  /* one consistent background for every screenshot card, site-wide —
+     a soft near-white radial glow (no per-project accent tinting), so the
+     box background stays neutral against the logo's blue/indigo identity
+     instead of competing with it. Pooled slightly below center, fading to
+     white at the edges. */
+  background: radial-gradient(ellipse 100% 55% at 50% 58%, #e2f0fd 0%, #ffffff 100%);
   border: 1.5px solid var(--line);
   border-radius: 20px;
-  min-height: 320px;
+  padding: 32px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Customer App (commerce) section: same soft radial glow, recolored to a
+   warm orange echoing the app's own orange call-to-action buttons. */
+.sub-product--customer .shot {
+  background: radial-gradient(ellipse 100% 55% at 50% 58%, #ffe5d6 0%, #ffffff 100%);
+}
+
+/* Group ordering box specifically: same glow again, recolored to the
+   green used in that feature's own header illustration — scoped more
+   specifically than the orange rule above so it wins within it. */
+.sub-product--customer .shot-stack--group-ordering .shot {
+  background: radial-gradient(ellipse 100% 55% at 50% 58%, #e2f7f0 0%, #ffffff 100%);
+}
+
+.shot img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+.shot .caption {
+  display: block;
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--grey-l);
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+.shot .caption .slot {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* paired frames: two related screens (adjacent in the source, e.g. a
+   before/after step, or a list + the dialog it opens) that share one
+   placeholder card, cascaded diagonally — first frame back and to the
+   left, second frame layered in front, shifted down and to the right, the
+   same staggered arrangement used across the reference frames. Each frame
+   already carries its own card/shadow styling from the export, so no
+   extra effects are added here — this just places them. Collapses to a
+   plain vertical stack below 860px, where there's no room for the overlap. */
+.shot .shot-pair {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.shot .shot-pair img {
+  margin: 0;
+  width: 58%;
+  flex: 0 0 58%;
+  position: relative;
+}
+.shot .shot-pair img:first-child {
+  z-index: 1;
+}
+.shot .shot-pair img:last-child {
+  z-index: 2;
+  margin-left: -16%;
+  margin-top: 16%;
+}
+
+/* filmstrip: a whole feature area shown as a row of screens (3–5), one
+   flow read left to right — order management, a dashboard, etc. Screens
+   share the width evenly and sit flush at the top, same card + caption as
+   everywhere else. Collapses to a plain vertical stack below 860px. */
+.shot .shot-filmstrip {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.shot .shot-filmstrip img {
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+
+/* nested filmstrip: a sub-group of frames (e.g. a stacked pair, via
+   filmstrip--col) sitting inside a wider filmstrip row alongside a plain
+   <img> sibling — gets the same flex-basis:0 sizing as an <img> sibling so
+   the row splits evenly between the single frame and the stacked group.
+   Used to keep two related frame-groups in one shared .shot box instead of
+   two separate side-by-side boxes. */
+.shot .shot-filmstrip > .shot-filmstrip {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* filmstrip--col: same filmstrip, stacked top-to-bottom instead of side by
+   side — for pairing two shorter, related frames (stacked in one column)
+   against a single taller reference frame on the other side of a pair.
+   Desktop-only concern: the default mobile filmstrip rule already stacks
+   everything full-width, so no separate mobile override is needed here. */
+.shot .shot-filmstrip.filmstrip--col {
+  flex-direction: column;
+  align-items: stretch;
+}
+.shot .shot-filmstrip.filmstrip--col img {
+  flex: none;
+  width: 100%;
+}
+
+/* filmstrip--chef2: three frames of very different native widths (a wide
+   dashboard screen next to two narrow modal dialogs) — proportional flex
+   instead of equal thirds, so the narrow dialogs don't get stretched out
+   past their natural modal proportions. */
+.shot .shot-filmstrip.filmstrip--chef2 img:nth-child(1) {
+  flex: 2.4 1 0;
+}
+.shot .shot-filmstrip.filmstrip--chef2 img:nth-child(2) {
+  flex: 1.2 1 0;
+}
+.shot .shot-filmstrip.filmstrip--chef2 img:nth-child(3) {
+  flex: 1 1 0;
+}
+
+/* frame-match: for a filmstrip with fewer screens than the widest reference
+   row (5-up), pin each frame to that same fixed width instead of letting
+   them stretch to fill the row — the extra room becomes side margin so
+   every filmstrip on the page reads at one consistent frame size. */
+.shot .shot-filmstrip.filmstrip--match {
+  justify-content: center;
+}
+.shot .shot-filmstrip.filmstrip--match img {
+  width: 197px;
+  flex: 0 0 197px;
+  margin: 0;
+}
+
+/* per-frame missing placeholder: for a filmstrip where only some frames
+   have a real image yet — sits inline at the same flex width as the real
+   <img> siblings, so a partially-filled box doesn't need the whole-shot
+   onerror/shot-empty swap (which is all-or-nothing per .shot). */
+.shot .shot-filmstrip .frame-missing {
+  flex: 1 1 0;
+  min-width: 0;
+  aspect-ratio: 1061/2128;
+  border: 1.5px dashed rgba(var(--accent-rgb), 0.45);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin: 28px 0;
-  overflow: hidden;
-  position: relative;
-  padding: 28px;
+  gap: 6px;
+  padding: 10px;
+  text-align: center;
+}
+/* Chromium quirk: an <img> (replaced element) and a plain <div> as flex
+   siblings with flex-basis:0 don't end up the same width even with
+   identical flex/min-width — the replaced element loses a few percent to
+   its aspect-ratio-driven sizing. Any filmstrip mixing a .frame-missing
+   placeholder with real <img> frames needs explicit equal widths instead
+   of flex-grow distribution. Covers the 3-up case (2 gaps @8px). */
+.shot .shot-filmstrip:has(.frame-missing) > * {
+  flex: 0 0 auto;
+  width: calc((100% - 16px) / 3);
+}
+.shot .shot-filmstrip .frame-missing svg {
+  opacity: 0.55;
+  width: 20px;
+  height: 20px;
+}
+.shot .shot-filmstrip .frame-missing b {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.shot .shot-filmstrip .frame-missing span {
+  font-family: var(--mono);
+  font-size: 8.5px;
+  color: var(--grey);
+  word-break: break-all;
+  line-height: 1.3;
+}
+
+/* empty / not-yet-supplied state, toggled by the img's onerror handler */
+.shot .shot-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 260px;
+  border: 1.5px dashed rgba(var(--accent-rgb), 0.45);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 24px;
+  text-align: center;
+}
+.shot .shot-empty svg {
+  opacity: 0.55;
+}
+.shot .shot-empty b {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.shot .shot-empty span {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--grey);
+  word-break: break-all;
+}
+.shot.shot--empty img {
+  display: none;
+}
+.shot.shot--empty .shot-empty {
+  display: flex;
+}
+
+/* case-hero: the large lead image at the top of a case study */
+.case-hero {
+  margin-top: 40px;
+}
+.case-hero .shot {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* single-column always: kept only as an alias so no old markup can regress
+   into a side-by-side layout */
+.shot-row {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 24px;
+}
+.shot-row .shot {
+  margin: 0;
 }
 
 /* ---------- feature grid (menu variants etc) ---------- */
@@ -727,7 +1102,7 @@ section {
   line-height: 1.55;
 }
 
-/* ---------- product sub-header inside TAPSI ---------- */
+/* ---------- product sub-header inside a multi-product case (e.g. TAPSI) ---------- */
 .sub-product {
   border-top: 2px solid var(--line);
   padding-top: 56px;
@@ -867,6 +1242,7 @@ footer {
 }
 .snap .cell {
   padding: 22px 28px 24px 0;
+  border-right: 1px solid var(--line);
 }
 .snap .cell:last-child {
   border-right: none;
@@ -893,40 +1269,36 @@ footer {
   font-weight: 800;
 }
 
-/* ---------- case hero visual ---------- */
-.case-hero {
-  margin-top: 40px;
-}
-.case-hero .shot {
-  background: var(--ph-bg);
-  border: 1.5px solid var(--line);
-  border-radius: 20px;
-  padding: 28px;
-  margin: 0;
-}
-.case-hero .shot img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 30px 60px -24px rgba(20, 20, 40, 0.32);
-  display: block;
-}
-.shot-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  margin-top: 24px;
-}
-.shot-stack .shot {
-  margin: 0;
-}
-.shot-row {
+/* ---------- outcome cards ---------- */
+.outcomes {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 24px;
+  gap: 14px;
+  margin-top: 8px;
 }
-.shot-row .shot {
-  margin: 0;
+.oc {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent, var(--indigo));
+  border-radius: 0 14px 14px 0;
+  padding: 20px 24px;
+}
+.oc b {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.oc span {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--body);
+}
+.oc.next {
+  border-left-style: dashed;
+  background: transparent;
 }
 
 /* ---------- hero proof line ---------- */
@@ -942,147 +1314,11 @@ footer {
   color: var(--grey-l);
   padding: 0 8px;
 }
-@media (max-width: 860px) {
-  .wrap,
-  .nav-inner {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .about-grid,
-  .two-col {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .fgrid {
-    grid-template-columns: 1fr;
-  }
-  .nav-links {
-    display: none;
-  }
-  .snap {
-    grid-template-columns: 1fr;
-  }
-  .snap .cell {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding-right: 0;
-  }
-  .snap .cell:last-child {
-    border-bottom: none;
-  }
-  /* side-by-side screenshots are unreadable at this width */
-  .shot-row {
-    grid-template-columns: 1fr;
-  }
-  section {
-    padding: 80px 0;
-  }
-  .hero {
-    padding: 120px 0 80px;
-  }
-  .hero .role {
-    font-size: 19px;
-  }
-  .hero .tagline {
-    font-size: 17px;
-    margin-top: 28px;
-  }
-  .hero-bottom {
-    margin-top: 44px;
-  }
-  .chapter-divider {
-    min-height: 56vh;
-    padding: 90px 24px;
-  }
-  .chapter-divider .cd-eyebrow {
-    font-size: 12px;
-  }
-  .quote-block {
-    flex-direction: column;
-    gap: 8px;
-    padding: 26px 24px;
-  }
-  .quote-block p {
-    font-size: 19px;
-  }
-  .decision {
-    padding: 24px 22px;
-  }
-  .ownership {
-    padding: 20px 20px;
-  }
-  .mini-toc a {
-    padding: 16px 14px;
-    gap: 12px;
-  }
-  .edu-row {
-    gap: 32px;
-  }
-  .cta {
-    margin-top: 64px;
-  }
-}
 
-@media (max-width: 560px) {
-  body {
-    font-size: 16px;
-  }
-  .wrap,
-  .nav-inner {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-  .nav-cue {
-    display: none;
-  }
-  .case-head {
-    gap: 14px;
-  }
-  .case-icon {
-    width: 46px;
-    height: 46px;
-    font-size: 20px;
-    border-radius: 12px;
-  }
-  .chapter-divider {
-    padding: 72px 18px;
-  }
-  .two-col {
-    gap: 28px;
-  }
-  .decision {
-    padding: 20px 16px;
-  }
-  .decision h3 {
-    font-size: 18px;
-  }
-  .quote-block {
-    padding: 22px 18px;
-  }
-  .tradeoff,
-  .note {
-    padding: 16px 16px;
-  }
-  .about-text p {
-    font-size: 17px;
-  }
-  .foot-row {
-    flex-direction: column;
-    gap: 6px;
-  }
-}
-.shot.plain-shot {
-  background: none;
-  border: none;
-  padding: 0;
-}
-.shot.plain-shot img {
-  border-radius: 0;
-  box-shadow: none;
-}
+/* ---------- chapter / page-intro banner ---------- */
 .chapter-divider {
   width: 100%;
-  min-height: 72vh;
+  min-height: 56vh;
   padding: 130px 48px;
   text-align: center;
   color: #fff;
@@ -1111,6 +1347,7 @@ footer {
   opacity: 0.85;
   max-width: 560px;
 }
+
 .ownership {
   border-left: 5px solid var(--tapsi);
   background: linear-gradient(90deg, rgba(241, 96, 42, 0.07), rgba(241, 96, 42, 0) 60%);
@@ -1141,9 +1378,11 @@ footer {
   max-width: 820px;
   color: var(--body);
 }
-.ownership .shot {
+.ownership .shot-stack {
   margin-top: 20px;
+  margin-bottom: 0;
 }
+
 .tradeoff {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -1163,4 +1402,278 @@ footer {
   font-size: 14.5px;
   line-height: 1.65;
   color: var(--body);
+}
+
+/* ---------- project nav grid (Home page — links to all case studies) ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 8px;
+}
+.project-card {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -24px rgba(20, 20, 40, 0.22);
+  border-color: var(--ph-border);
+}
+.project-card .pc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* no clipping for logos here either — see .case-icon.has-logo above */
+.project-card .pc-icon.has-logo {
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+}
+.project-card .pc-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.project-card .pc-n {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--grey-l);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  display: block;
+}
+.project-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.project-card p {
+  font-size: 14px;
+  color: var(--grey);
+  line-height: 1.6;
+}
+.project-card .pc-arrow {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  color: var(--grey-l);
+  font-size: 18px;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+.project-card:hover .pc-arrow {
+  transform: translate(3px, -3px);
+  color: var(--indigo);
+}
+.project-card.is-placeholder {
+  border-style: dashed;
+}
+.project-card.is-placeholder .pc-status {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grey-l);
+  background: var(--ph-bg);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.project-card--wide {
+  grid-column: 1 / -1;
+}
+
+/* logo strip used on the "Other Projects" card — several smaller-scope
+   projects represented by mark only, no individual case study. No radius
+   or clipping here either — see .case-icon.has-logo above for why. */
+.pc-logos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.pc-logo-badge {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.pc-logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- other-projects: round-up card grid ---------- */
+.roundup-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+.roundup-card {
+  border: 1.5px dashed var(--ph-border);
+  border-radius: 20px;
+  padding: 32px 36px;
+  background: var(--ph-bg);
+}
+.roundup-card .rc-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-l);
+  margin-bottom: 10px;
+}
+.roundup-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.roundup-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+@media (max-width: 860px) {
+  .wrap,
+  .nav-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .about-grid,
+  .two-col,
+  .two-col.rev {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .fgrid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none;
+  }
+  .diagram .node {
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+  .snap {
+    grid-template-columns: 1fr;
+  }
+  .snap .cell {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+  }
+  .snap .cell:last-child {
+    border-bottom: none;
+  }
+  .outcomes {
+    grid-template-columns: 1fr;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .shot {
+    padding: 20px;
+  }
+  .shot .shot-pair {
+    flex-direction: column;
+  }
+  .shot .shot-pair img {
+    width: 100%;
+    flex: none;
+    margin: 0 0 20px 0 !important;
+  }
+  .shot .shot-pair img:last-child {
+    margin-bottom: 0 !important;
+  }
+  .shot .shot-filmstrip {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .shot .shot-filmstrip img {
+    width: 100%;
+    flex: none;
+  }
+  .shot .shot-filmstrip.filmstrip--match img {
+    width: 100%;
+    flex: none;
+  }
+  .shot .shot-filmstrip .frame-missing {
+    width: 100%;
+    flex: none;
+  }
+  .shot .shot-filmstrip:has(.frame-missing) > * {
+    width: 100%;
+    flex: none;
+  }
+  .shot .shot-filmstrip.filmstrip--chef2 img:nth-child(1),
+  .shot .shot-filmstrip.filmstrip--chef2 img:nth-child(2),
+  .shot .shot-filmstrip.filmstrip--chef2 img:nth-child(3) {
+    flex: none;
+    width: 100%;
+  }
+  .shot .shot-filmstrip > .shot-filmstrip {
+    width: 100%;
+    flex: none;
+  }
+  .shot-stack--pair {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .shot-stack--pair .shot {
+    flex: 0 0 auto;
+    padding: 20px;
+  }
+  .shot-stack--pair.pair--uneven .shot.shot--wide,
+  .shot-stack--pair.pair--uneven .shot.shot--narrow {
+    flex: 0 0 auto;
+    padding: 20px;
+  }
+}
+
+/* ---------- React-only: GradientText ships centred, rounded and font-medium —
+   undo all of that so the animated hero name sits where the static one did ---------- */
+.hero h1 .hero-name {
+  margin: 0;
+  max-width: none;
+  justify-content: flex-start;
+  font-weight: inherit;
+  border-radius: 0;
+  overflow: visible;
+  cursor: default;
+  backdrop-filter: none;
 }
