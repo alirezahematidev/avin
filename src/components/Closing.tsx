@@ -1,12 +1,14 @@
 const SKILLS = [
+  'Native Mobile App Design',
   'Complex Workflow Design',
   'Product Systems Thinking',
+  'Maps & Geolocation UX',
   'Business-to-Experience Translation',
   'Operational UX',
   'Information Architecture',
   'Data-heavy Product Design',
   'Design Systems',
-  'User Research & Usability Testing',
+  'User Research & Behavioural Analytics',
   'Product Strategy & Collaboration',
 ]
 

@@ -4,29 +4,21 @@ import Closing from '../components/Closing'
 
 const CASES = [
   {
-    to: '/hummers',
-    logo: 'hummers.png',
-    alt: 'Hummers logo',
-    n: '01 · Fintech B2B',
-    title: 'Hummers',
-    sub: 'Sole designer · investment continued',
-  },
-  {
     to: '/tapsifood',
     logo: 'tapsifood.png',
     alt: 'TAPSI Food logo',
-    n: '02 · Marketplace',
+    n: '01 · Mobile Marketplace',
     title: 'TAPSI Food',
-    sub: '3 products · thousands of stores',
+    sub: '3 products · native mobile · thousands of stores',
   },
-]
-
-const OTHER_LOGOS = [
-  { file: 'pichak.png', alt: 'Pichak logo' },
-  { file: 'hamrah-aval.png', alt: 'Hamrah Aval logo' },
-  { file: 'mark-blue-o.png', alt: 'Additional project logo' },
-  { file: 'mark-zap.png', alt: 'Additional project logo' },
-  { file: 'mark-petal.png', alt: 'Additional project logo' },
+  {
+    to: '/hummers',
+    logo: 'hummers.png',
+    alt: 'Hummers logo',
+    n: '02 · Fintech B2B',
+    title: 'Hummers',
+    sub: 'Sole designer · built from zero · investment continued',
+  },
 ]
 
 export default function Home() {
@@ -39,13 +31,14 @@ export default function Home() {
           <div className="section-eyebrow">About</div>
           <div className="about-text" style={{ maxWidth: 760 }}>
             <p>
-              Eight years in, what still holds my attention isn't the screen — it's the system behind
-              it. Financial rules, operational workflows, the unwritten protocols a team carries in
-              its head. Design starts when I understand those well enough to argue about them.
+              What holds my attention isn't the screen — it's the system behind it. Delivery
+              logistics, financial rules, the unwritten protocols a team carries in its head. Design
+              starts when I understand those well enough to argue about them.
             </p>
             <p>
-              Two case studies: a B2B leasing platform built from zero with no local benchmark, and a
-              three-product delivery ecosystem — merchant, back-office, marketplace.
+              Four products across two case studies: a three-product delivery ecosystem — a native
+              merchant app, a customer marketplace, and the back-office coordinating both — and a B2B
+              leasing platform built from zero with no local benchmark.
             </p>
           </div>
         </div>
@@ -74,19 +67,6 @@ export default function Home() {
               </Link>
             ))}
 
-            <Link className="project-card is-placeholder project-card--wide" to="/other-projects">
-              <span className="pc-status">Coming soon</span>
-              <div className="pc-logos">
-                {OTHER_LOGOS.map((l) => (
-                  <span className="pc-logo-badge" key={l.file}>
-                    <img src={`images/logos/${l.file}`} alt={l.alt} />
-                  </span>
-                ))}
-              </div>
-              <span className="pc-n">03</span>
-              <h3>Other Projects</h3>
-              <p>Additional work — in progress.</p>
-            </Link>
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ export default function Hummers() {
 
 
       <div className="chapter-divider" style={{ background: 'var(--hummers)' }}>
-        <div className="cd-eyebrow">01 · Selected Work</div>
+        <div className="cd-eyebrow">02 · Selected Work</div>
         <h2>Hummers</h2>
         <p className="cd-sub">Fintech B2B leasing platform — case study starts below.</p>
       </div>
@@ -16,7 +16,7 @@ export default function Hummers() {
         <div className="case-head">
           <div className="case-icon has-logo"><img src="images/logos/hummers.png" alt="Hummers logo" loading="lazy" decoding="async" /></div>
           <div>
-            <div className="section-eyebrow">01 · Selected Work</div>
+            <div className="section-eyebrow">02 · Selected Work</div>
             <h2 className="section-title">Hummers</h2>
           </div>
         </div>

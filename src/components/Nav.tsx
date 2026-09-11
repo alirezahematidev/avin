@@ -1,9 +1,8 @@
 import { Link, NavLink } from 'react-router-dom'
 
 const LINKS = [
-  { to: '/hummers', label: 'Hummers' },
   { to: '/tapsifood', label: 'TAPSI Food' },
-  { to: '/other-projects', label: 'Other Projects' },
+  { to: '/hummers', label: 'Hummers' },
 ]
 
 export default function Nav() {

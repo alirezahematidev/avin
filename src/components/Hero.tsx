@@ -1,6 +1,13 @@
 import GradientText from './GradientText'
 
-const CHIPS = ['Fintech', 'Enterprise Platforms', 'Marketplace', 'Operational UX', 'B2B & B2C']
+const CHIPS = [
+  'Mobile Apps',
+  'Marketplace',
+  'Delivery & Logistics',
+  'Payments',
+  'Operational UX',
+  'Research & Behavioural Data',
+]
 
 // the page's own indigo → coral ramp, not the React Bits default purples
 const NAME_COLORS = ['#2B2D75', '#4C4FE3', '#FF6A45']
@@ -8,7 +15,7 @@ const NAME_COLORS = ['#2B2D75', '#4C4FE3', '#FF6A45']
 export default function Hero() {
   return (
     <header className="hero wrap">
-      <div className="eyebrow">Senior Product Designer</div>
+      <div className="eyebrow">Senior Product Designer — Mobile &amp; Marketplace</div>
       <h1>
         Avin
         <GradientText className="hero-name" colors={NAME_COLORS} animationSpeed={9}>
@@ -16,16 +23,16 @@ export default function Hero() {
         </GradientText>
       </h1>
       <p className="role">
-        I design the systems companies actually run on — leasing platforms, marketplaces, back-office
-        tools.
+        I design mobile products for marketplaces and the operations behind them — the app a customer
+        orders in, the app a store runs its day on, and the platform that coordinates both.
       </p>
       <div className="tagline">
         Before I design a screen, I work out how the business makes money, where it loses time, and
         who gets blamed when something breaks. <b>The interface is the last decision, not the first.</b>
       </div>
       <div className="hero-proof">
-        8+ years<i>·</i>Fintech leasing platform<i>·</i>3-product delivery marketplace<i>·</i>B2B &amp;
-        B2C
+        7 years in product design<i>·</i>3-product delivery marketplace<i>·</i>Native mobile
+        <i>·</i>Courier &amp; dispatch
       </div>
       <div className="hero-bottom">
         <div className="contact-block">

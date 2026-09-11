@@ -4,14 +4,12 @@ import Nav from './components/Nav'
 import Home from './pages/Home'
 import Hummers from './pages/Hummers'
 import TapsiFood from './pages/TapsiFood'
-import OtherProjects from './pages/OtherProjects'
 import { useReveal } from './useReveal'
 
 // each page tints its gradient frames and dashed placeholders with its own accent
 const ACCENT: Record<string, string> = {
   '/hummers': 'var(--hummers-rgb)',
   '/tapsifood': 'var(--tapsi-rgb)',
-  '/other-projects': 'var(--other-rgb)',
 }
 
 function Layout() {
@@ -30,7 +28,6 @@ function Layout() {
         <Route path="/" element={<Home />} />
         <Route path="/hummers" element={<Hummers />} />
         <Route path="/tapsifood" element={<TapsiFood />} />
-        <Route path="/other-projects" element={<OtherProjects />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </>

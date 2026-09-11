@@ -9,7 +9,7 @@ export default function TapsiFood() {
 
 
       <div className="chapter-divider" style={{ background: 'var(--tapsi)' }}>
-        <div className="cd-eyebrow">02 · Selected Work</div>
+        <div className="cd-eyebrow">01 · Selected Work</div>
         <h2>TAPSI Food</h2>
         <p className="cd-sub">Three dedicated apps covering every side of a delivery marketplace — customer, merchant, and internal operations.</p>
       </div>
@@ -19,7 +19,7 @@ export default function TapsiFood() {
         <div className="case-head">
           <div className="case-icon has-logo"><img src="images/logos/tapsifood.png" alt="TAPSI Food logo" loading="lazy" decoding="async" /></div>
           <div>
-            <div className="section-eyebrow">02 · Selected Work</div>
+            <div className="section-eyebrow">01 · Selected Work</div>
             <h2 className="section-title">TAPSI Food</h2>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function TapsiFood() {
           <div className="snap">
             <div className="cell"><span className="k">Problem</span><span className="v">Stores needed to run their whole business — menu, orders, reporting — without calling operations for every task.</span></div>
             <div className="cell"><span className="k">My role</span><span className="v">Core Product Designer on this product, end to end.</span></div>
-            <div className="cell"><span className="k">Outcome</span><span className="v">Shipped before the Customer App — it was the infrastructure the marketplace depended on.</span></div>
+            <div className="cell"><span className="k">Outcome</span><span className="v">Shipped before the Customer App — the infrastructure the marketplace depended on. A confirmation problem <b>found in Clarity recordings, fixed, and verified against the same recordings post-launch.</b></span></div>
           </div>
 
           <div className="shot-stack">
@@ -290,7 +290,6 @@ export default function TapsiFood() {
           </div>
 
           <div className="section-eyebrow" style={{ marginTop: '40px' }}>Group ordering — designed, not shipped</div>
-          <p style={{ fontSize: '14px', color: 'var(--grey-l)', marginTop: '-6px', maxWidth: '780px' }}>Placeholder write-up — a fuller version is coming once I write it up properly.</p>
           <p style={{ fontSize: '16px', lineHeight: '1.75', maxWidth: '780px' }}>A feature I designed for the Customer App that never made it to production: an admin creates a shared group, invites members by phone number or straight from their contacts, and everyone adds their own items to one cart — with the per-person discount growing the more people join. The screens below cover creating and managing a group, the two ways to add members, the discount-tier explainer, and a group's shared cart open inside a store.</p>
           <div className="shot-stack shot-stack--group-ordering">
             <figure className="shot">
@@ -325,7 +324,7 @@ export default function TapsiFood() {
           <span className="sub-flag" style={{ background: 'var(--chef)' }}>03 · CHEF</span>
           <h3 className="sub-title">Chef (Back-office / Operations Platform)</h3>
           <p className="sub-sub">The internal engine behind TAPSI Food — a multi-role operations platform serving call center/support, marketing, operations, and store management, built to cover anything the Merchant App and Customer App didn't.</p>
-          <p style={{ fontSize: '14px', color: 'var(--grey-l)', marginTop: '10px', maxWidth: '780px' }}>This case is intentionally lighter than the Hummers and Merchant App write-ups — it focuses on scope, one standout piece of work, and the story of how the platform grew and was later redesigned, rather than the full research framework.</p>
+          <p style={{ fontSize: '14px', color: 'var(--grey-l)', marginTop: '10px', maxWidth: '780px' }}>A shorter read than the other two — scope, one piece of work I'm proud of, and how an organically-grown platform earned its redesign.</p>
 
           <div className="section-eyebrow" style={{ marginTop: '40px' }}>Overview</div>
           <p style={{ fontSize: '16px', lineHeight: '1.75', maxWidth: '780px' }}>Chef is the internal back-office platform behind TAPSI Food — not a simple admin panel, but a multi-role operations platform serving very different internal teams: call center / support, marketing, operations, and store management. Anything not fully covered by the Merchant App or the Customer App had to be handleable here, so the platform could support both of those products end-to-end.</p>
