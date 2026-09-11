@@ -14,7 +14,7 @@ export default function Hummers() {
       <section id="hummers" className="case-section" style={{ paddingTop: '80px' }}>
        <div className="wrap">
         <div className="case-head">
-          <div className="case-icon has-logo"><img src="images/logos/hummers.png" alt="Hummers logo" loading="lazy" decoding="async" /></div>
+          <div className="case-icon has-logo"><img src="images/logos/hummers.webp" alt="Hummers logo" loading="lazy" decoding="async" /></div>
           <div>
             <div className="section-eyebrow">02 · Selected Work</div>
             <h2 className="section-title">Hummers</h2>
@@ -28,8 +28,8 @@ export default function Hummers() {
         <div className="case-hero">
           <figure className="shot">
             <div className="shot-pair">
-              <img src="images/hummers/01-applicant-info.png" alt="Hummers applicant information step — identity lookup and credit assessment score" loading="lazy" decoding="async" />
-              <img src="images/hummers/02-program-selection.png" alt="Hummers program selection — leasing programs by bank, tenor, and loan ceiling" loading="lazy" decoding="async" />
+              <img src="images/hummers/01-applicant-info.webp" alt="Hummers applicant information step — identity lookup and credit assessment score" loading="lazy" decoding="async" />
+              <img src="images/hummers/02-program-selection.webp" alt="Hummers program selection — leasing programs by bank, tenor, and loan ceiling" loading="lazy" decoding="async" />
             </div>
             <figcaption className="caption">Hummers request flow — applicant information, credit assessment, and program selection</figcaption>
           </figure>
@@ -106,22 +106,22 @@ export default function Hummers() {
         <div className="shot-stack">
           <figure className="shot">
             <div className="shot-pair">
-              <img src="images/hummers/03-loan-terms-empty.png" alt="Hummers loan and installment step — before terms are entered" loading="lazy" decoding="async" />
-              <img src="images/hummers/04-loan-installment-schedule.png" alt="Hummers loan and installment step — after entering loan terms, with the generated installment schedule" loading="lazy" decoding="async" />
+              <img src="images/hummers/03-loan-terms-empty.webp" alt="Hummers loan and installment step — before terms are entered" loading="lazy" decoding="async" />
+              <img src="images/hummers/04-loan-installment-schedule.webp" alt="Hummers loan and installment step — after entering loan terms, with the generated installment schedule" loading="lazy" decoding="async" />
             </div>
             <figcaption className="caption">Hummers loan and installment schedule — step 4, before and after entering loan terms</figcaption>
           </figure>
           <figure className="shot">
             <div className="shot-pair">
-              <img src="images/hummers/05-guarantee-list.png" alt="Hummers guarantee step — guarantor and collateral document list" loading="lazy" decoding="async" />
-              <img src="images/hummers/06-guarantee-add-document.png" alt="Hummers guarantee step — add-collateral-document dialog" loading="lazy" decoding="async" />
+              <img src="images/hummers/05-guarantee-list.webp" alt="Hummers guarantee step — guarantor and collateral document list" loading="lazy" decoding="async" />
+              <img src="images/hummers/06-guarantee-add-document.webp" alt="Hummers guarantee step — add-collateral-document dialog" loading="lazy" decoding="async" />
             </div>
             <figcaption className="caption">Hummers guarantee step — guarantor list and the add-collateral-document dialog</figcaption>
           </figure>
           <figure className="shot">
             <div className="shot-pair">
-              <img src="images/hummers/07-contracts-report.png" alt="Hummers contracts report — filterable list of contracts by status and referral" loading="lazy" decoding="async" />
-              <img src="images/hummers/08-treasury.png" alt="Hummers treasury — cheque lifecycle and ledger detail" loading="lazy" decoding="async" />
+              <img src="images/hummers/07-contracts-report.webp" alt="Hummers contracts report — filterable list of contracts by status and referral" loading="lazy" decoding="async" />
+              <img src="images/hummers/08-treasury.webp" alt="Hummers treasury — cheque lifecycle and ledger detail" loading="lazy" decoding="async" />
             </div>
             <figcaption className="caption">Hummers contracts report and treasury — cheque lifecycle, referrals, and ledger detail</figcaption>
           </figure>

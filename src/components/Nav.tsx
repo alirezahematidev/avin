@@ -1,9 +1,9 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 
 const LINKS = [
-  { to: '/tapsifood', label: 'TAPSI Food' },
-  { to: '/hummers', label: 'Hummers' },
-]
+  { to: "/tapsifood", label: "TAPSI Food" },
+  { to: "/hummers", label: "Hummers" },
+];
 
 export default function Nav() {
   return (
@@ -14,7 +14,7 @@ export default function Nav() {
         </Link>
         <div className="nav-links">
           {LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink key={l.to} to={l.to} className={({ isActive }) => (isActive ? "active" : "")}>
               {l.label}
             </NavLink>
           ))}
@@ -22,5 +22,5 @@ export default function Nav() {
         <div className="nav-cue">Product Design Portfolio · 2026</div>
       </div>
     </nav>
-  )
+  );
 }

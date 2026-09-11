@@ -17,7 +17,7 @@ export default function TapsiFood() {
       <section id="tapsi" className="case-section" style={{ paddingTop: '80px' }}>
        <div className="wrap">
         <div className="case-head">
-          <div className="case-icon has-logo"><img src="images/logos/tapsifood.png" alt="TAPSI Food logo" loading="lazy" decoding="async" /></div>
+          <div className="case-icon has-logo"><img src="images/logos/tapsifood.webp" alt="TAPSI Food logo" loading="lazy" decoding="async" /></div>
           <div>
             <div className="section-eyebrow">01 · Selected Work</div>
             <h2 className="section-title">TAPSI Food</h2>
@@ -44,11 +44,11 @@ export default function TapsiFood() {
           <div className="shot-stack">
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/merchant-01a-new-orders.png" alt="Merchant App new orders — incoming list with confirmation-deadline alerts" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-01b-confirm-modal.png" alt="Merchant App order confirmation — setting prep time" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-01c-order-details.png" alt="Merchant App order detail — items, payment, and customer information" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-01d-orders-list.png" alt="Merchant App orders list — in-progress and delivered, with courier feedback" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-01e-cancel-modal.png" alt="Merchant App order cancellation — pick which current orders to cancel" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-01a-new-orders.webp" alt="Merchant App new orders — incoming list with confirmation-deadline alerts" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-01b-confirm-modal.webp" alt="Merchant App order confirmation — setting prep time" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-01c-order-details.webp" alt="Merchant App order detail — items, payment, and customer information" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-01d-orders-list.webp" alt="Merchant App orders list — in-progress and delivered, with courier feedback" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-01e-cancel-modal.webp" alt="Merchant App order cancellation — pick which current orders to cancel" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Merchant App order management — new orders, preparing, ready, and order detail with confirmation and prep-time adjustment</figcaption>
             </figure>
@@ -57,15 +57,15 @@ export default function TapsiFood() {
           <div className="shot-stack shot-stack--pair">
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/merchant-02a-new-product.png" alt="Merchant App new product form" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-02b-upload-images.png" alt="Merchant App product image upload" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-02a-new-product.webp" alt="Merchant App new product form" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-02b-upload-images.webp" alt="Merchant App product image upload" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Merchant App menu builder — new product form and product image upload</figcaption>
             </figure>
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/merchant-03a-new-discount.png" alt="Merchant App new discount — percentage, time window, and discounted-products selection" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-03b-products-list.png" alt="Merchant App product list — quick links to discounts, add-ons, and categories" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-03a-new-discount.webp" alt="Merchant App new discount — percentage, time window, and discounted-products selection" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-03b-products-list.webp" alt="Merchant App product list — quick links to discounts, add-ons, and categories" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Merchant App discount setup — percentage, time window, and discounted-products selection</figcaption>
             </figure>
@@ -109,9 +109,9 @@ export default function TapsiFood() {
           <div className="shot-stack">
             <figure className="shot">
               <div className="shot-filmstrip filmstrip--match">
-                <img src="images/tapsifood/merchant-04a-overview.png" alt="Merchant App dashboard — overview tab with best-selling products and customer feedback" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-04b-dashboard.png" alt="Merchant App dashboard — sales report and operational KPIs" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-04c-order-count.png" alt="Merchant App dashboard — order-count breakdown by status" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-04a-overview.webp" alt="Merchant App dashboard — overview tab with best-selling products and customer feedback" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-04b-dashboard.webp" alt="Merchant App dashboard — sales report and operational KPIs" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-04c-order-count.webp" alt="Merchant App dashboard — order-count breakdown by status" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Merchant App dashboard — sales overview, best-selling products, operational KPIs, and order-count breakdown</figcaption>
             </figure>
@@ -120,15 +120,15 @@ export default function TapsiFood() {
           <div className="shot-stack shot-stack--pair">
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/merchant-05a-zone-map.png" alt="Merchant App delivery zone — map-based zone editor" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-05b-zone-settings.png" alt="Merchant App delivery zone — per-zone delivery fee and time settings" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-05a-zone-map.webp" alt="Merchant App delivery zone — map-based zone editor" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-05b-zone-settings.webp" alt="Merchant App delivery zone — per-zone delivery fee and time settings" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Merchant App delivery zone management — map-based zone editor and per-zone delivery settings</figcaption>
             </figure>
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/merchant-06a-comment-ratings.png" alt="Merchant App customer comments — ratings and reviews list" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/merchant-06b-comment-reply.png" alt="Merchant App customer comments — reply to a review with built-in guidance" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-06a-comment-ratings.webp" alt="Merchant App customer comments — ratings and reviews list" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/merchant-06b-comment-reply.webp" alt="Merchant App customer comments — reply to a review with built-in guidance" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Merchant App customer comment management — ratings, reviews, and reply workflow with guidance</figcaption>
             </figure>
@@ -192,8 +192,8 @@ export default function TapsiFood() {
             <p>Ticketing was mine from end to end: every flow, across all three surfaces of the ecosystem — the Customer App (commerce), the Merchant App, and the Chef back-office. Not one screen contributed to a shared flow — the entire system, across every role and every product it touched, was designed by me.</p>
             <div className="shot-stack">
               <figure className="shot">
-                <img src="images/tapsifood/customer-01-ticketing-flow.png" alt="Full ticketing flow map across the Customer App, Merchant App, and Chef back-office" loading="lazy" decoding="async" onError={shotFallback} />
-                <ShotEmpty file="images/tapsifood/customer-01-ticketing-flow.png" />
+                <img src="images/tapsifood/customer-01-ticketing-flow.webp" alt="Full ticketing flow map across the Customer App, Merchant App, and Chef back-office" loading="lazy" decoding="async" onError={shotFallback} />
+                <ShotEmpty file="images/tapsifood/customer-01-ticketing-flow.webp" />
                 <figcaption className="caption">Full ticketing flow map across the Customer App, Merchant App, and Chef back-office</figcaption>
               </figure>
             </div>
@@ -204,16 +204,16 @@ export default function TapsiFood() {
           <div className="shot-stack shot-stack--pair pair--uneven">
             <figure className="shot shot--wide">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/customer-02a-home.png" alt="TAPSI Food home screen" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-02b-search-active.png" alt="TAPSI Food search bar activated with quick-search chips" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-02c-search-landing.png" alt="TAPSI Food search landing before typing" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-02a-home.webp" alt="TAPSI Food home screen" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-02b-search-active.webp" alt="TAPSI Food search bar activated with quick-search chips" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-02c-search-landing.webp" alt="TAPSI Food search landing before typing" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">TAPSI Food home, the search bar activated with quick-search chips, and the landing state before typing</figcaption>
             </figure>
             <figure className="shot shot--narrow">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/customer-02d-autosuggest.png" alt="TAPSI Food fuzzy-matching autosuggest while typing" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-02e-substitute-suggestion.png" alt="TAPSI Food zero-result search offering a substitute keyword" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-02d-autosuggest.webp" alt="TAPSI Food fuzzy-matching autosuggest while typing" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-02e-substitute-suggestion.webp" alt="TAPSI Food zero-result search offering a substitute keyword" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">TAPSI Food fuzzy-matching autosuggest while typing, and the zero-result fallback offering a substitute keyword</figcaption>
             </figure>
@@ -222,15 +222,15 @@ export default function TapsiFood() {
           <div className="shot-stack shot-stack--pair">
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/customer-03a-autosuggest-reuse.png" alt="TAPSI Food search suggestions surfaced again mid-flow" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-03b-search-results.png" alt="TAPSI Food search results across business-line tabs" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-03a-autosuggest-reuse.webp" alt="TAPSI Food search suggestions surfaced again mid-flow" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-03b-search-results.webp" alt="TAPSI Food search results across business-line tabs" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">TAPSI Food search resurfacing mid-flow, leading into results across business-line tabs</figcaption>
             </figure>
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/customer-03c-ai-search-suggestion.png" alt="TAPSI Food AI-assisted descriptive search suggestion on a zero-result search" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-03d-clarification-modal.png" alt="TAPSI Food search clarification modal for an ambiguous term" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-03c-ai-search-suggestion.webp" alt="TAPSI Food AI-assisted descriptive search suggestion on a zero-result search" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-03d-clarification-modal.webp" alt="TAPSI Food search clarification modal for an ambiguous term" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">TAPSI Food AI-assisted descriptive search suggestion on a zero-result search, and the clarification modal for an ambiguous term</figcaption>
             </figure>
@@ -251,11 +251,11 @@ export default function TapsiFood() {
             <div className="shot-stack" style={{ marginTop: '8px' }}>
               <figure className="shot">
                 <div className="shot-filmstrip">
-                  <img src="images/tapsifood/customer-05a-out-of-stock.png" alt="TAPSI Food cart — item the store has run out of" loading="lazy" decoding="async" />
-                  <img src="images/tapsifood/customer-05b-note.png" alt="TAPSI Food cart — note for courier or restaurant" loading="lazy" decoding="async" />
-                  <img src="images/tapsifood/customer-05c-menu-sheet.png" alt="TAPSI Food cart — in-cart menu browsing to add more items" loading="lazy" decoding="async" />
-                  <img src="images/tapsifood/customer-05d-coupon.png" alt="TAPSI Food cart — coupon selection" loading="lazy" decoding="async" />
-                  <img src="images/tapsifood/customer-05e-full-summary.png" alt="TAPSI Food cart — full order summary and payment breakdown" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/customer-05a-out-of-stock.webp" alt="TAPSI Food cart — item the store has run out of" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/customer-05b-note.webp" alt="TAPSI Food cart — note for courier or restaurant" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/customer-05c-menu-sheet.webp" alt="TAPSI Food cart — in-cart menu browsing to add more items" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/customer-05d-coupon.webp" alt="TAPSI Food cart — coupon selection" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/customer-05e-full-summary.webp" alt="TAPSI Food cart — full order summary and payment breakdown" loading="lazy" decoding="async" />
                 </div>
                 <figcaption className="caption">TAPSI Food cart review — coupon selection, in-cart menu browsing, and note to restaurant/courier</figcaption>
               </figure>
@@ -269,7 +269,7 @@ export default function TapsiFood() {
             <div className="shot-stack" style={{ marginTop: '16px' }}>
               <figure className="shot">
                 <div className="shot-filmstrip filmstrip--match">
-                  <img src="images/tapsifood/customer-06-checkout-discount.png" alt="TAPSI Food discount code field placed at checkout, with add-coupon action" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/customer-06-checkout-discount.webp" alt="TAPSI Food discount code field placed at checkout, with add-coupon action" loading="lazy" decoding="async" />
                 </div>
                 <figcaption className="caption">TAPSI Food discount code field placed at checkout, with add-coupon action</figcaption>
               </figure>
@@ -281,9 +281,9 @@ export default function TapsiFood() {
           <div className="shot-stack">
             <figure className="shot">
               <div className="shot-filmstrip filmstrip--match">
-                <img src="images/tapsifood/customer-07a-journey-map.png" alt="TAPSI Food gamified journey milestone path map" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-07b-stage-rewards.png" alt="TAPSI Food gamified journey stage rewards detail" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-07c-profile-progress.png" alt="TAPSI Food gamified journey profile badges and progress" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-07a-journey-map.webp" alt="TAPSI Food gamified journey milestone path map" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-07b-stage-rewards.webp" alt="TAPSI Food gamified journey stage rewards detail" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-07c-profile-progress.webp" alt="TAPSI Food gamified journey profile badges and progress" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">TAPSI Food gamified customer journey — milestone path, stage rewards, and profile badges/progress</figcaption>
             </figure>
@@ -294,15 +294,15 @@ export default function TapsiFood() {
           <div className="shot-stack shot-stack--group-ordering">
             <figure className="shot">
               <div className="shot-filmstrip filmstrip--match">
-                <img src="images/tapsifood/customer-08a-my-groups.png" alt="TAPSI Food group ordering — my groups list" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-08b-create-empty.png" alt="TAPSI Food group ordering — new group, before adding members" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-08c-add-by-phone.png" alt="TAPSI Food group ordering — adding a member by phone number" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-08d-select-contacts.png" alt="TAPSI Food group ordering — adding members from contacts" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-08e-create-members.png" alt="TAPSI Food group ordering — new group with members added" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08a-my-groups.webp" alt="TAPSI Food group ordering — my groups list" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08b-create-empty.webp" alt="TAPSI Food group ordering — new group, before adding members" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08c-add-by-phone.webp" alt="TAPSI Food group ordering — adding a member by phone number" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08d-select-contacts.webp" alt="TAPSI Food group ordering — adding members from contacts" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08e-create-members.webp" alt="TAPSI Food group ordering — new group with members added" loading="lazy" decoding="async" />
               </div>
               <div className="shot-filmstrip filmstrip--match" style={{ marginTop: '8px' }}>
-                <img src="images/tapsifood/customer-08f-discount-tiers.png" alt="TAPSI Food group ordering — discount-tier explainer by group size" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/customer-08g-group-cart.png" alt="TAPSI Food group ordering — a group's shared cart open inside a store" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08f-discount-tiers.webp" alt="TAPSI Food group ordering — discount-tier explainer by group size" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/customer-08g-group-cart.webp" alt="TAPSI Food group ordering — a group's shared cart open inside a store" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Creating and managing a group, adding members by phone or from contacts, the discount-tier explainer, and a group's shared cart open inside a store</figcaption>
             </figure>
@@ -344,10 +344,10 @@ export default function TapsiFood() {
           <div className="shot-stack">
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/chef-01a-vendor-map.png" alt="Chef vendor detail page — delivery radius map and per-channel delivery settings" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/chef-01a-vendor-map.webp" alt="Chef vendor detail page — delivery radius map and per-channel delivery settings" loading="lazy" decoding="async" />
                 <div className="shot-filmstrip filmstrip--col">
-                  <img src="images/tapsifood/chef-01b-zone-circles.png" alt="Chef delivery zone editor — concentric aerial-distance rings" loading="lazy" decoding="async" />
-                  <img src="images/tapsifood/chef-01c-zone-polygons.png" alt="Chef delivery zone editor — custom polygon zones on the street map" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/chef-01b-zone-circles.webp" alt="Chef delivery zone editor — concentric aerial-distance rings" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/chef-01c-zone-polygons.webp" alt="Chef delivery zone editor — custom polygon zones on the street map" loading="lazy" decoding="async" />
                 </div>
               </div>
               <figcaption className="caption">Vendor detail page — delivery radius map, aerial-distance tiers, and per-channel delivery settings; and the delivery zone editor — concentric aerial-distance rings, and custom polygon zones drawn directly on the street map</figcaption>
@@ -357,8 +357,8 @@ export default function TapsiFood() {
           <div className="shot-stack">
             <figure className="shot">
               <div className="shot-filmstrip">
-                <img src="images/tapsifood/chef-02a-order-items.png" alt="Chef order details — items tab, with cancelled and returned items broken out" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/chef-02b-order-delivery.png" alt="Chef order details — delivery tab, courier route map and status change log" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/chef-02a-order-items.webp" alt="Chef order details — items tab, with cancelled and returned items broken out" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/chef-02b-order-delivery.webp" alt="Chef order details — delivery tab, courier route map and status change log" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Order details — items tab, with cancelled and returned items broken out separately, and the delivery tab with live courier route and a full delivery status change log</figcaption>
             </figure>
@@ -367,9 +367,9 @@ export default function TapsiFood() {
           <div className="shot-stack">
             <figure className="shot">
               <div className="shot-filmstrip filmstrip--chef2">
-                <img src="images/tapsifood/chef-03a-order-tickets.png" alt="Chef order details — tickets tab, with fraud and risk flags" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/chef-03b-ticket-type.png" alt="Chef new ticket — source and type selection" loading="lazy" decoding="async" />
-                <img src="images/tapsifood/chef-03c-ticket-reason.png" alt="Chef new ticket — reason and affected line items" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/chef-03a-order-tickets.webp" alt="Chef order details — tickets tab, with fraud and risk flags" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/chef-03b-ticket-type.webp" alt="Chef new ticket — source and type selection" loading="lazy" decoding="async" />
+                <img src="images/tapsifood/chef-03c-ticket-reason.webp" alt="Chef new ticket — reason and affected line items" loading="lazy" decoding="async" />
               </div>
               <figcaption className="caption">Order details surfacing fraud/risk flags above the full ticket history, and the two-step new-ticket flow — type, then reason and affected items — opened straight from the order</figcaption>
             </figure>
@@ -385,10 +385,10 @@ export default function TapsiFood() {
               <figure className="shot">
                 <div className="shot-filmstrip">
                   <div className="shot-filmstrip filmstrip--col">
-                    <img src="images/tapsifood/chef-04a-component-builder.png" alt="Chef Page Builder — composing a new carousel component" loading="lazy" decoding="async" />
-                    <img src="images/tapsifood/chef-04b-components-list.png" alt="Chef Page Builder — a page's component list" loading="lazy" decoding="async" />
+                    <img src="images/tapsifood/chef-04a-component-builder.webp" alt="Chef Page Builder — composing a new carousel component" loading="lazy" decoding="async" />
+                    <img src="images/tapsifood/chef-04b-components-list.webp" alt="Chef Page Builder — a page's component list" loading="lazy" decoding="async" />
                   </div>
-                  <img src="images/tapsifood/chef-04c-page-form.png" alt="Chef Page Builder — full page configuration and display rules" loading="lazy" decoding="async" />
+                  <img src="images/tapsifood/chef-04c-page-form.webp" alt="Chef Page Builder — full page configuration and display rules" loading="lazy" decoding="async" />
                 </div>
                 <figcaption className="caption">Page Builder — composing a new carousel component from a vendor-card design library, managing it in the page's component list, and the full page configuration form: display rules, list source and ranking, card design, and a raw Elasticsearch query</figcaption>
               </figure>

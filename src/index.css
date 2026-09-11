@@ -1492,6 +1492,13 @@ footer {
 }
 .project-card.is-placeholder {
   border-style: dashed;
+  cursor: default;
+}
+/* not a link — no hover lift */
+.project-card.is-placeholder:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--line);
 }
 .project-card.is-placeholder .pc-status {
   position: absolute;
