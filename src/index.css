@@ -78,6 +78,10 @@
 }
 html {
   scroll-behavior: smooth;
+  /* must be on html, not body: on body it propagates to the viewport but still
+     lets the mobile layout viewport grow. clip, not hidden — no scroll container,
+     so position: sticky keeps working. */
+  overflow-x: clip;
 }
 body {
   font-family: var(--sans);
@@ -85,7 +89,6 @@ body {
   color: var(--body);
   line-height: 1.6;
   font-size: 17px;
-  overflow-x: hidden;
   --accent-rgb: var(--indigo-rgb); /* default gradient accent — overridden per page */
 }
 ::selection {
@@ -202,7 +205,9 @@ img {
   height: 2px;
   border-radius: 2px;
   background: currentColor;
-  transition: transform 0.2s, opacity 0.2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 .nav-burger::before,
 .nav-burger::after {
@@ -249,16 +254,24 @@ img {
   justify-content: center;
   position: relative;
   padding: 140px 0 100px;
+  /* .hero is full-bleed and the content inside it wears .wrap — so the glow
+     spans the viewport instead of stopping at the 1180px column. It is a
+     background, not a positioned ::before: an absolute box bleeding past the
+     right edge widens the mobile layout viewport, which drags the fixed nav
+     (and its burger) off-screen with it. A background can't. */
+  background: radial-gradient(
+    ellipse 46% 85% at 77% 40%,
+    rgba(76, 79, 227, 0.13) 0%,
+    rgba(201, 208, 246, 0.08) 45%,
+    transparent 72%
+  );
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  right: -15%;
-  width: 70%;
-  height: 120%;
-  background: radial-gradient(ellipse at center, rgba(76, 79, 227, 0.13) 0%, rgba(201, 208, 246, 0.08) 45%, transparent 72%);
-  pointer-events: none;
+/* .hero and .wrap used to be the same element, where .hero's `padding` shorthand
+   zeroed .wrap's 48px side padding — the hero column runs flush to the grid edge.
+   Now that they are separate elements, restore it explicitly. */
+.hero > .wrap {
+  padding-left: 0;
+  padding-right: 0;
 }
 .eyebrow {
   font-family: var(--mono);
@@ -1628,6 +1641,7 @@ footer {
 
 @media (max-width: 860px) {
   .wrap,
+  .hero > .wrap,
   .nav-inner {
     padding-left: 24px;
     padding-right: 24px;
