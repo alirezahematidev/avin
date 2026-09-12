@@ -187,6 +187,58 @@ img {
 }
 .nav-toggle {
   display: none;
+  background: none;
+  border: 0;
+  padding: 8px;
+  margin: -8px -8px -8px 0;
+  cursor: pointer;
+  color: var(--ink);
+}
+.nav-burger,
+.nav-burger::before,
+.nav-burger::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-burger::before,
+.nav-burger::after {
+  content: "";
+  position: relative;
+}
+.nav-burger::before {
+  top: -6px;
+}
+.nav-burger::after {
+  top: 4px;
+}
+.nav-burger.open {
+  background: transparent;
+}
+.nav-burger.open::before {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-burger.open::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.nav-drawer {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+  padding: 8px 24px 16px;
+}
+.nav-drawer a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--grey);
+  padding: 12px 0;
+}
+.nav-drawer a.active {
+  color: var(--ink);
 }
 
 /* ---------- hero ---------- */
@@ -1589,8 +1641,12 @@ footer {
   .fgrid {
     grid-template-columns: 1fr;
   }
-  .nav-links {
+  .nav-links,
+  .nav-cue {
     display: none;
+  }
+  .nav-toggle {
+    display: block;
   }
   .diagram .node {
     font-size: 12px;
